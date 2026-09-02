@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import saffirLogo from '../assets/saffir-logo.png';
 
 export function Header() {
@@ -15,14 +16,17 @@ export function Header() {
   return (
     <header className={scrolled ? 'scrolled' : ''}>
       <nav className="nav wrap">
-        <a href="#" className="logo">
+        <Link to="/" className="logo">
           <img src={saffirLogo} alt="Saffir Joias" />
-        </a>
+        </Link>
         <ul className={`nav-links ${isOpen ? 'open' : ''}`} id="navLinks">
-          <li><a href="#sobre" onClick={() => setIsOpen(false)}>Sobre</a></li>
-          <li><a href="#colecoes" onClick={() => setIsOpen(false)}>Coleções</a></li>
-          <li><a href="#avaliacoes" onClick={() => setIsOpen(false)}>Avaliações</a></li>
-          <li><a href="#local" onClick={() => setIsOpen(false)}>Localização</a></li>
+          <li><Link to="/#sobre" onClick={() => setIsOpen(false)}>Sobre</Link></li>
+          <li><Link to="/#colecoes" onClick={() => setIsOpen(false)}>Coleções</Link></li>
+          <li><Link to="/#avaliacoes" onClick={() => setIsOpen(false)}>Avaliações</Link></li>
+          <li><Link to="/#local" onClick={() => setIsOpen(false)}>Localização</Link></li>
+          <li className="nav-cta-mobile">
+            <a href="https://wa.me/5522998371359" target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)}>Falar no WhatsApp</a>
+          </li>
         </ul>
         <a className="nav-cta" href="https://wa.me/5522998371359" target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a>
         <button 

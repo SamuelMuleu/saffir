@@ -43,7 +43,10 @@ export function Reviews() {
                 {"★".repeat(review.rating)}
               </div>
               <p className="review-text">{review.text}</p>
-              <div className="review-author">— {review.name}</div>
+              <div className="review-author-row">
+                <span className="review-avatar">{review.name.charAt(0)}</span>
+                <div className="review-author">{review.name}</div>
+              </div>
             </div>
           ))}
         </div>

@@ -1,27 +1,46 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Saffir Joias — atelier de joias no Shopping Pelinca Square Center, Campos dos Goytacazes. Alianças, anéis, solitários, relógios e joias masculinas. Nota 4,8 no Google.">
+<html lang="pt-BR">
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Saffir Joias | Campos dos Goytacazes">
-    <meta property="og:description" content="Atelier de joias no Shopping Pelinca Square Center. Investir em detalhes é investir em você.">
-    <meta property="og:type" content="business.business">
-    <meta property="og:locale" content="pt_BR">
-    
-    <title>Saffir Joias | Joalheria em Campos dos Goytacazes</title>
-    
-    <script type="application/ld+json">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#12182b" />
+  <meta name="description"
+    content="Saffir Joias — atelier de joias no Shopping Pelinca Square Center, Campos dos Goytacazes. Alianças, anéis, solitários, relógios e joias masculinas. Nota 4,8 no Google.">
+
+  <!-- Fonts: preconnect + stylesheet link loads in parallel with the rest of the page,
+       instead of the render-blocking waterfall a CSS @import causes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Saffir Joias | Campos dos Goytacazes">
+  <meta property="og:description"
+    content="Atelier de joias no Shopping Pelinca Square Center. Investir em detalhes é investir em você.">
+  <meta property="og:type" content="business.business">
+  <meta property="og:locale" content="pt_BR">
+  <!-- TODO: once the site has a final domain (Vercel or custom), swap these for absolute URLs -->
+  <meta property="og:image" content="/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Saffir Joias | Campos dos Goytacazes">
+  <meta name="twitter:description" content="Atelier de joias no Shopping Pelinca Square Center.">
+  <meta name="twitter:image" content="/og-image.png">
+
+  <title>Saffir Joias | Joalheria em Campos dos Goytacazes</title>
+
+  <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "JewelryStore",
       "name": "Saffir Joias",
-      "image": "",
+      "image": "/og-image.png",
       "telephone": "+5522998371359",
       "address": {
         "@type": "PostalAddress",
@@ -37,13 +56,15 @@
         "reviewCount": "14"
       },
       "sameAs": [
-        "https://www.instagram.com/saffir_atelierdejoias/"
+        "https://www.instagram.com/saffirjoias/"
       ]
     }
     </script>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
 </html>

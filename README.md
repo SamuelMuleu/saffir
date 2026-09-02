@@ -1,32 +1,39 @@
-# React + TypeScript + Vite
+# Saffir Joias
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Landing page da Saffir Joias — atelier de joias no Shopping Pelinca Square Center, Campos dos Goytacazes (RJ).
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- [React 19](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vite.dev/) (build e dev server)
+- CSS puro (sem framework), tokens de tema em `src/index.css`
+- [oxlint](https://oxc.rs/) para lint
 
-## React Compiler
+## Rodando localmente
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+pnpm install
+pnpm dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Scripts
+
+| Comando        | O que faz                          |
+|-----------------|-------------------------------------|
+| `pnpm dev`      | Sobe o servidor de desenvolvimento  |
+| `pnpm build`    | Type-check (`tsc -b`) + build de produção em `dist/` |
+| `pnpm lint`     | Roda o oxlint                       |
+| `pnpm preview`  | Serve o build de produção localmente |
+
+## Estrutura
+
+```
+src/
+  components/   Header, Hero, Carousel, About, Collections, Reviews, Location, Footer, ...
+  hooks/        useScrollReveal (animações de entrada ao rolar a página)
+  assets/       logo e imagens
+```
+
+## Deploy
+
+O projeto é 100% estático (sem backend, sem variáveis de ambiente) — build com `pnpm build` e sirva a pasta `dist/`. Já está configurado para deploy direto no [Vercel](https://vercel.com) a partir do repositório GitHub.

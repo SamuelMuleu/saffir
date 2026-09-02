@@ -1,31 +1,20 @@
-import { Header } from './components/Header'
-import { Carousel } from './components/Carousel'
-import { Hero } from './components/Hero'
-import { About } from './components/About'
-import { Collections } from './components/Collections'
-import { Reviews } from './components/Reviews'
-import { Location } from './components/Location'
-import { Footer } from './components/Footer'
-import { CookieConsent } from './components/CookieConsent'
-import { FloatingActions } from './components/FloatingActions'
-import { useScrollReveal } from './hooks/useScrollReveal'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Layout } from './components/Layout'
+import { Home } from './pages/Home'
+import { CategoryPage } from './pages/CategoryPage'
+import { ItemPage } from './pages/ItemPage'
 
 function App() {
-  useScrollReveal();
-
   return (
-    <>
-      <Header />
-      <Carousel />
-      <Hero />
-      <About />
-      <Collections />
-      <Reviews />
-      <Location />
-      <Footer />
-      <CookieConsent />
-      <FloatingActions />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="colecoes/:slug" element={<CategoryPage />} />
+          <Route path="colecoes/:slug/:itemIndex" element={<ItemPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 

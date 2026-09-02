@@ -16,7 +16,7 @@ export function Footer() {
         </div>
         <ul className="foot-links">
           <li><a href="https://wa.me/5522998371359" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
-          <li><a href="https://www.instagram.com/saffir_atelierdejoias/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+          <li><a href="https://www.instagram.com/saffirjoias/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
           <li><a href="#local">Localização</a></li>
         </ul>
       </div>

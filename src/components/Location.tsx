@@ -22,13 +22,13 @@ export function Location() {
             </div>
             <div className="info-item">
               <div className="label">Instagram</div>
-              <div className="value"><a href="https://www.instagram.com/saffir_atelierdejoias/" target="_blank" rel="noopener noreferrer">@saffir_atelierdejoias</a></div>
+              <div className="value"><a href="https://www.instagram.com/saffirjoias/" target="_blank" rel="noopener noreferrer">saffirjoias</a></div>
             </div>
           </div>
         </div>
         <iframe
           className="map-frame reveal reveal-delay-1"
-          loading="lazy" 
+          loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
           src="https://www.google.com/maps?q=Saffir+Joias+Av.+Pelinca+102+Parque+Tamandare+Campos+dos+Goytacazes+RJ&output=embed"
           title="Mapa com a localização da Saffir Joias"

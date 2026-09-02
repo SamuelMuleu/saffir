@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Raw photo exports (optimized copies live in src/assets/joias)
+/imagens
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
