@@ -10,7 +10,7 @@ export function Footer() {
           <a href="#" className="logo">
             <img src={saffirLogo} alt="Saffir Joias" />
           </a>
-          <p style={{ marginTop: '10px', fontSize: '0.85rem', color: 'rgba(237,231,217,0.5)', maxWidth: '32ch' }}>
+          <p style={{ marginTop: '10px', fontSize: '0.85rem', color: 'rgba(43,63,107,0.6)', maxWidth: '32ch' }}>
             Shopping Pelinca Square Center, Campos dos Goytacazes - RJ
           </p>
         </div>

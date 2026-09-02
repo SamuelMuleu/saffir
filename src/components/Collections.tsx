@@ -17,7 +17,9 @@ export function Collections() {
               to={`/colecoes/${cat.slug}`}
               aria-label={`Ver fotos de ${cat.title}`}
             >
-              <img className="coll-photo" src={cat.cover} alt={cat.title} loading="lazy" />
+              <div className="coll-photo-frame">
+                <img className="coll-photo" src={cat.cover} alt={cat.title} loading="lazy" />
+              </div>
               <div className="coll-card-text">
                 <h3>{cat.title}</h3>
                 <span>{cat.tagline}</span>
@@ -26,7 +28,6 @@ export function Collections() {
             </Link>
           ))}
         </div>
-        <p className="coll-note">Catálogo completo disponível na loja — <a href="https://wa.me/5522998371359" target="_blank" rel="noopener noreferrer">fale com a gente no WhatsApp</a> para ver fotos das peças antes de visitar.</p>
       </div>
     </section>
   );

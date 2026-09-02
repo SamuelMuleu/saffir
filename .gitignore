@@ -11,6 +11,7 @@ node_modules
 dist
 dist-ssr
 *.local
+.env
 
 # Raw photo exports (optimized copies live in src/assets/joias)
 /imagens

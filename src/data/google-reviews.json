@@ -1,0 +1,11 @@
+{
+  "rating": 4.8,
+  "userRatingsTotal": 14,
+  "reviews": [
+    { "id": "seed-1", "name": "Maria Silva", "text": "Atendimento impecável! Comprei as alianças de casamento e ficaram perfeitas. Muito capricho em cada detalhe, super recomendo o atelier.", "rating": 5 },
+    { "id": "seed-2", "name": "João Victor", "text": "Ótima qualidade e preço justo. Fizeram um anel sob medida do jeito que eu queria. Recomendo muito o trabalho da equipe.", "rating": 5 },
+    { "id": "seed-3", "name": "Fernanda L.", "text": "As joias são lindas e o atendimento da equipe é excelente. Super atenciosos desde o primeiro contato no WhatsApp até a entrega final.", "rating": 5 },
+    { "id": "seed-4", "name": "Carlos E.", "text": "Excelente opção em Campos. Comprei um presente para minha esposa de aniversário e ela adorou. Voltarei com certeza.", "rating": 5 }
+  ],
+  "updatedAt": null
+}
