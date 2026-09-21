@@ -6,6 +6,7 @@ export function Hero() {
       <img className="hero-photo" src={heroPhoto} alt="Solitário Saffir Joias" />
       <div className="hero-scrim" />
       <div className="wrap hero-content reveal">
+        <span className="eyebrow-rating">Joalheria em Campos dos Goytacazes</span>
         <h1>Investir em detalhes<br />é investir em <em>você</em>.</h1>
         <div className="hero-actions">
           <a className="btn btn-primary" href="https://wa.me/5522998371359" target="_blank" rel="noopener noreferrer">Conversar no WhatsApp</a>

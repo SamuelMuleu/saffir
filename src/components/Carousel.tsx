@@ -1,42 +1,13 @@
 import { useEffect, useState } from 'react';
-import solitario from '../assets/joias/solitario.jpg';
-import alianca1 from '../assets/joias/alianca-1.jpg';
-import alianca4 from '../assets/joias/alianca-4.jpg';
-import anelFashion2 from '../assets/joias/anel-fashion-2.jpg';
-import relogio4 from '../assets/joias/relogio-4.jpg';
 
-const slides = [
-  {
-    id: 1,
-    title: 'Anéis & Solitários',
-    tagline: 'Peças para o dia a dia e para pedir em casamento',
-    image: solitario,
-  },
-  {
-    id: 2,
-    title: 'Alianças',
-    tagline: 'Casamento e compromisso, com gravação sob medida',
-    image: alianca1,
-  },
-  {
-    id: 3,
-    title: 'Colares',
-    tagline: 'Correntes e pingentes em ouro e prata',
-    image: alianca4,
-  },
-  {
-    id: 4,
-    title: 'Brincos',
-    tagline: 'Do clássico ponto de luz ao mais contemporâneo',
-    image: anelFashion2,
-  },
-  {
-    id: 5,
-    title: 'Relógios',
-    tagline: 'Linha completa, masculina e feminina',
-    image: relogio4,
-  },
-];
+const campanhaImages = import.meta.glob('../assets/joias/campanha-*.jpg', {
+  eager: true,
+  import: 'default',
+}) as Record<string, string>;
+
+const slides = Object.keys(campanhaImages)
+  .sort()
+  .map((path) => campanhaImages[path]);
 
 export function Carousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -60,14 +31,10 @@ export function Carousel() {
       onMouseLeave={() => setIsPaused(false)}
     >
       <div className="gallery-track" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
-        {slides.map((slide) => (
-          <div className="gallery-slide" key={slide.id}>
-            <div className="gallery-text">
-              <h3>{slide.title}</h3>
-              <p>{slide.tagline}</p>
-            </div>
+        {slides.map((image, idx) => (
+          <div className="gallery-slide" key={image}>
             <div className="gallery-photo-frame">
-              <img className="gallery-photo" src={slide.image} alt={slide.title} loading="lazy" />
+              <img className="gallery-photo" src={image} alt={`Saffir Joias ${idx + 1}`} loading="lazy" />
             </div>
           </div>
         ))}
@@ -77,12 +44,12 @@ export function Carousel() {
       <button className="gallery-arrow gallery-arrow-next" onClick={next} aria-label="Próximo slide">❯</button>
 
       <div className="gallery-dots">
-        {slides.map((slide, idx) => (
+        {slides.map((image, idx) => (
           <button
-            key={slide.id}
+            key={image}
             className={`dot ${idx === currentIndex ? 'active' : ''}`}
             onClick={() => setCurrentIndex(idx)}
-            aria-label={`Ir para ${slide.title}`}
+            aria-label={`Ir para slide ${idx + 1}`}
           />
         ))}
       </div>

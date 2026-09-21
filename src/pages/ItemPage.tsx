@@ -1,11 +1,14 @@
 import { Link, useParams } from 'react-router-dom';
 import { getCategory } from '../data/collections';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export function ItemPage() {
   const { slug, itemIndex } = useParams();
   const category = getCategory(slug);
   const index = parseInt(itemIndex || '', 10);
   const photo = category && Number.isFinite(index) ? category.photos[index] : undefined;
+
+  useScrollReveal();
 
   if (!category || !photo) {
     return (
@@ -26,13 +29,13 @@ export function ItemPage() {
   return (
     <section className="item-page">
       <div className="wrap">
-        <Link className="cat-back" to={`/colecoes/${category.slug}`}>← Voltar para {category.title}</Link>
+        <Link className="cat-back reveal" to={`/colecoes/${category.slug}`}>← Voltar para {category.title}</Link>
 
         <div className="item-detail">
-          <div className="item-photo-frame">
+          <div className="item-photo-frame reveal">
             <img src={photo} alt={itemLabel} />
           </div>
-          <div className="item-info">
+          <div className="item-info reveal reveal-delay-1">
             <span className="section-label">{category.title}</span>
             <h1>Peça {index + 1}</h1>
             <p className="item-tagline">{category.tagline}</p>

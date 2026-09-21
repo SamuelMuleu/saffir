@@ -1,2 +1,5 @@
 User-agent: *
 Allow: /
+
+# TODO(dominio): atualizar para o domínio final (ver index.html)
+Sitemap: https://www.saffirjoias.com.br/sitemap.xml
