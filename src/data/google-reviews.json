@@ -2,10 +2,12 @@
   "rating": 4.8,
   "userRatingsTotal": 14,
   "reviews": [
-    { "id": "seed-1", "name": "Maria Silva", "text": "Atendimento impecável! Comprei as alianças de casamento e ficaram perfeitas. Muito capricho em cada detalhe, super recomendo o atelier.", "rating": 5 },
-    { "id": "seed-2", "name": "João Victor", "text": "Ótima qualidade e preço justo. Fizeram um anel sob medida do jeito que eu queria. Recomendo muito o trabalho da equipe.", "rating": 5 },
-    { "id": "seed-3", "name": "Fernanda L.", "text": "As joias são lindas e o atendimento da equipe é excelente. Super atenciosos desde o primeiro contato no WhatsApp até a entrega final.", "rating": 5 },
-    { "id": "seed-4", "name": "Carlos E.", "text": "Excelente opção em Campos. Comprei um presente para minha esposa de aniversário e ela adorou. Voltarei com certeza.", "rating": 5 }
+    { "id": "eneida-heloise-ferreira", "name": "Eneida Heloise Ferreira", "text": "Ótimo atendimento. Transparência sobre serviços. Eu recomendo. As joias que adquiri na Saffir são de ótima qualidade.", "rating": 5 },
+    { "id": "thais-souza", "name": "Thais Souza", "text": "Excelência em ourivesaria! A Saffir Joias se destaca pelo acabamento de alta qualidade e pelo compromisso com a satisfação do cliente. Joias lindas, certificadas e com um atendimento de primeira linha. Confiança total na marca!", "rating": 5 },
+    { "id": "rachel-souza", "name": "Rachel Souza", "text": "O atendimento é excelente e o trabalho é incrível. As peças são lindas, feitas com atenção aos detalhes e muita qualidade. Dá pra ver o cuidado em cada joia. Recomendo demais a Saffir Joias!", "rating": 5 },
+    { "id": "siminino01", "name": "Siminino01", "text": "Gostei muito! Belo atendimento. As vendedoras são muito carismáticas e educadas, e a loja é bem aconchegante. Até cheguei a ganhar um cafezinho de qualidade!", "rating": 5 },
+    { "id": "maria-da-penha-ferreira-paes", "name": "Maria da Penha Ferreira Paes", "text": "Muito boa a experiência! Ótimo atendimento.", "rating": 5 },
+    { "id": "edalma-paes", "name": "Edalma Paes", "text": "Variedade, qualidade e atendimento excelentes.", "rating": 5 }
   ],
-  "updatedAt": null
+  "updatedAt": "2026-09-21T00:00:00.000Z"
 }

@@ -9,14 +9,23 @@
 - `src/components/Hero.tsx`: eyebrow "Joalheria em Campos dos Goytacazes" acima do H1 (reaproveitando classe `.eyebrow-rating`, que estava sem uso).
 - `src/components/About.tsx`: "atelier de joias" → "joalheria" no primeiro parágrafo.
 - `pnpm build` e `pnpm lint` rodados sem erros; confirmado que `sitemap.xml`/`robots.txt` vão para `dist/`.
+- Transições de página: `src/components/PageTransition.tsx` (novo) + `Layout.tsx`, fade/subida ao trocar de rota via CSS (`@keyframes page-fade-in`, respeitando `prefers-reduced-motion`).
+- `useScrollReveal` aplicado também em `CategoryPage.tsx` e `ItemPage.tsx` (antes só a Home tinha o efeito de revelar ao rolar).
+- Commit `ebaef4a` (build+push pedido pelo usuário): inclui o acima + o carrossel do topo (`Carousel.tsx`) já estava pronto de sessão anterior usando fotos reais de campanha (`src/assets/joias/campanha-*.jpg`) em vez dos placeholders — revisado e incluído no mesmo push.
+- Avaliações reais do Google: tentativa de automatizar via `scripts/fetch-google-reviews.mjs` + Google Places API falhou — todas as 19 execuções do workflow `.github/workflows/update-google-reviews.yml` no GitHub Actions retornavam erro (confirmado via API do GitHub), porque as secrets nunca foram cadastradas. Ao configurar a chave (projeto Google Cloud "Saffir-Joias", `verdant-bulwark-507511-u8`) e testar localmente, a API retornou `REQUEST_DENIED: faturamento não ativado` — usuário decidiu não pagar o pré-pagamento de R$150 pedido pelo Google. Commit `0b2b707`: desativado o `schedule:` do workflow (mantido `workflow_dispatch` pra rodar manual se um dia ativarem faturamento).
+- `src/data/google-reviews.json` atualizado à mão com 6 avaliações reais copiadas pelo usuário direto do Google Maps (nota geral 4,8 · 14 avaliações confirmada pelo usuário, todas 5 estrelas). Uma avaliação negativa (Fabiana Avellar, reclamação de entrega/conserto) e 3 sem texto foram deixadas de fora, mesmo critério que o script automático usaria (`rating >= 4` e com texto).
 **Decisões:**
 - URLs absolutas (canonical, OG, sitemap, JSON-LD) usam placeholder `https://www.saffirjoias.com.br` — domínio final ainda não definido pelo usuário. Todas marcadas com comentário `TODO(dominio)` para find-and-replace depois.
 - Não implementado SSR/prerender (mudança de arquitetura maior que o pedido) nem geo coordinates no JSON-LD (sem dado confiável disponível).
 - Reforço de "joalheria" no conteúdo visível feito com o mínimo de mudança visual possível (reuso de classe CSS já existente).
+- Avaliações do Google: usuário escolheu manter atualização manual (em vez de widget de terceiro tipo Elfsight, ou da Google Business Profile API oficial) — sem custo, sem dependência externa, sem marca de terceiro no site. Trade-off: precisa voltar a colar avaliações nesse arquivo de tempos em tempos.
+- Recusei implementar scraping automatizado do Google Maps (viola Termos de Serviço do Google e é frágil a mudanças de layout).
 **Pendências:**
 - Definir domínio final e substituir todas as ocorrências de `https://www.saffirjoias.com.br` (index.html, robots.txt, sitemap.xml).
 - Reivindicar/otimizar o perfil da empresa no Google (Google Business Profile) — é o fator com mais peso para aparecer no "pacote local" do Google para buscas como "joalheria Campos dos Goytacazes"; isso fica fora do código do site.
 - Considerar registrar o site no Google Search Console e submeter o `sitemap.xml` assim que o domínio estiver no ar.
+- Voltar a `src/data/google-reviews.json` periodicamente (a cada 2-3 meses, sugestão) para colar avaliações novas do Google Maps manualmente.
+- Arquivo `.env` local criado (fora do git) com a chave da Places API e o Place ID, caso decidam ativar o faturamento no futuro e reativar a automação.
 **Próximos passos:**
 - Assim que o domínio for escolhido: atualizar as URLs e fazer o deploy; depois enviar o site ao Search Console.
 
