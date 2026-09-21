@@ -188,11 +188,33 @@ header.scrolled{
   inset:0;
   overflow:hidden;
 }
-.gallery-photo{
+/* As fotos da campanha são verticais (formato story/reels, 9:16). Em telas
+   largas, a caixa do carrossel fica muito mais larga que alta — se a foto
+   cobrisse (object-fit:cover) essa caixa inteira, precisaria ser ampliada
+   muitas vezes e ficaria cortada/borrada. Por isso: a foto real aparece
+   inteira, sem cortes (object-fit:contain), e uma cópia da mesma foto,
+   desfocada e escurecida, preenche o fundo — a mesma técnica usada em
+   apps como Spotify/Apple Music para capas de proporção diferente. */
+.gallery-photo-bg{
+  position:absolute;
+  inset:0;
   width:100%;
   height:100%;
   object-fit:cover;
   object-position:center;
+  filter:blur(30px) brightness(0.55) saturate(1.1);
+  transform:scale(1.15);
+}
+.gallery-photo{
+  position:relative;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center;
+}
+
+@media(min-width:900px){
+  .gallery-slide{min-height:560px;}
 }
 .gallery-arrow{
   position:absolute;

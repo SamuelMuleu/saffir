@@ -40,6 +40,7 @@ export function Carousel() {
         {slides.map((image, idx) => (
           <div className="gallery-slide" key={image}>
             <div className="gallery-photo-frame">
+              <img className="gallery-photo-bg" src={image} alt="" aria-hidden="true" loading="lazy" />
               <img className="gallery-photo" src={image} alt={`Saffir Joias ${idx + 1}`} loading="lazy" />
             </div>
           </div>
