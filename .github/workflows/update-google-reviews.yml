@@ -1,8 +1,13 @@
 name: Atualizar avaliações do Google
 
 on:
-  schedule:
-    - cron: '0 7 * * *' # 04:00 (horário de Brasília), todo dia
+  # Agendamento automático desativado: a Google Places API exige faturamento
+  # ativado no projeto do Google Cloud, o que a Saffir decidiu não usar (o
+  # Google pediu pré-pagamento de R$150 para liberar). Avaliações agora são
+  # atualizadas manualmente em src/data/google-reviews.json.
+  # Para reativar no futuro: descomentar o bloco `schedule` abaixo.
+  # schedule:
+  #   - cron: '0 7 * * *' # 04:00 (horário de Brasília), todo dia
   workflow_dispatch: {}
 
 permissions:
