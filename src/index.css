@@ -172,6 +172,7 @@ header.scrolled{
   background:linear-gradient(160deg, var(--ink) 0%, var(--sapphire-deep) 100%);
   overflow:hidden;
   border-bottom:1px solid rgba(216,189,147,0.15);
+  touch-action:pan-y;
 }
 .gallery-track{
   display:flex;
@@ -521,7 +522,7 @@ footer .logo img{height:34px;}
   color: #fff;
 }
 
-/* ---------- Carousel Avalia��es ---------- */
+/* ---------- Carousel Avaliações ---------- */
 .reviews-carousel {
   margin-top: 48px;
   position: relative;
@@ -529,6 +530,7 @@ footer .logo img{height:34px;}
   margin-left: auto;
   margin-right: auto;
   overflow: hidden;
+  touch-action: pan-y;
 }
 .carousel-track {
   display: flex;

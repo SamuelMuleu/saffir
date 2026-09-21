@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import googleReviews from '../data/google-reviews.json';
+import { useSwipe } from '../hooks/useSwipe';
 
 const reviewsData = googleReviews.reviews;
 
@@ -18,12 +19,19 @@ export function Reviews() {
     setCurrentIndex(index);
   };
 
+  const swipe = useSwipe(nextReview, prevReview);
+
   return (
     <section className="reviews" id="avaliacoes">
       <h2 className="reveal">O que dizem no Google</h2>
 
       {reviewsData.length > 0 && (
-        <div className="reviews-carousel wrap reveal">
+        <div
+          className="reviews-carousel wrap reveal"
+          onTouchStart={swipe.onTouchStart}
+          onTouchMove={swipe.onTouchMove}
+          onTouchEnd={swipe.onTouchEnd}
+        >
           <div className="carousel-track" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
             {reviewsData.map((review) => (
               <div className="carousel-slide" key={review.id}>

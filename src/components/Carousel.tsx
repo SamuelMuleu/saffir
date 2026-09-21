@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useSwipe } from '../hooks/useSwipe';
 
 const campanhaImages = import.meta.glob('../assets/joias/campanha-*.jpg', {
   eager: true,
@@ -24,11 +25,16 @@ export function Carousel() {
   const next = () => setCurrentIndex((prev) => (prev + 1) % slides.length);
   const prev = () => setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
 
+  const swipe = useSwipe(next, prev);
+
   return (
     <section
       className="gallery"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
+      onTouchStart={(e) => { setIsPaused(true); swipe.onTouchStart(e); }}
+      onTouchMove={swipe.onTouchMove}
+      onTouchEnd={() => { swipe.onTouchEnd(); setIsPaused(false); }}
     >
       <div className="gallery-track" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
         {slides.map((image, idx) => (
